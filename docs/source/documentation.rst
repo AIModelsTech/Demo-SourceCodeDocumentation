@@ -95,7 +95,7 @@ GitHub Actions Workflow
 
 The project includes a GitHub Actions workflow that automatically builds and deploys the documentation to GitHub Pages.
 
-The page is accessible at: `demo-docs.aimodels.ca <http://demo-docs.aimodels.ca>`_
+The page is accessible at: `demo-docs.aimodels.ca <https://demo-docs.aimodels.ca>`_
 
 The workflow is defined in the `.github/workflows/docs.yaml` file.
 

@@ -15,24 +15,24 @@ This repository showcases the use of Sphinx for generating documentation for a P
 
 ## Getting Started
 
-For instructions on how to get started with this project, please refer to the [Getting Started](http://demo-docs.aimodels.ca/getting-started.html) section of the documentation.
+For instructions on how to get started with this project, please refer to the [Getting Started](https://demo-docs.aimodels.ca/getting-started.html) section of the documentation.
 
 ## Development
 
-For information on setting up your development environment, please refer to the [Development](http://demo-docs.aimodels.ca/development.html) section of the documentation.
+For information on setting up your development environment, please refer to the [Development](https://demo-docs.aimodels.ca/development.html) section of the documentation.
 
 ## Documentation
 
-For details on maintaining and building the documentation, please refer to the [Documentation](http://demo-docs.aimodels.ca/documentation.html) section.
+For details on maintaining and building the documentation, please refer to the [Documentation](https://demo-docs.aimodels.ca/documentation.html) section.
 
 ## Reference
 
-For API reference and detailed module documentation, please refer to the [Reference](http://demo-docs.aimodels.ca/reference/index.html) section.
+For API reference and detailed module documentation, please refer to the [Reference](https://demo-docs.aimodels.ca/reference/index.html) section.
 
 ## Useful Links
 
 -   [GitHub Repository](https://github.com/AIModelsTech/Demo-SourceCodeDocumentation)
--   [Demo Documentation](http://demo-docs.aimodels.ca)
+-   [Demo Documentation](https://demo-docs.aimodels.ca)
 
 ## Example Usage
 

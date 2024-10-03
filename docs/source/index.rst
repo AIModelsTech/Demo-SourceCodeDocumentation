@@ -14,7 +14,7 @@ Welcome to Sphinx Documentation Demo!
    :hidden:
 
    github <https://github.com/AIModelsTech/Demo-SourceCodeDocumentation>
-   demo-docs <http://demo-docs.aimodels.ca>
+   demo-docs <https://demo-docs.aimodels.ca>
 
 .. module:: area
 
