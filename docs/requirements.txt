@@ -1,0 +1,3 @@
+sphinx
+sphinx-design
+sphinx-rtd-theme
