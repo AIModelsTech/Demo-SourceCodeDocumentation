@@ -1,0 +1,52 @@
+name: Build and Deploy Documentation
+on:
+    workflow_dispatch:
+    pull_request:
+    push:
+        branches: [main]
+    release:
+        types: [published]
+jobs:
+    generate-docs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Pull Docker image
+              run: docker pull sphinxdoc/sphinx-latexpdf
+            - name: Run Docker container and generate docs
+              run: |
+                  docker run -i -v ${{ github.workspace }}:/app sphinxdoc/sphinx-latexpdf /bin/bash -c "
+                    cd /app &&
+                    python3 -m pip install -r requirements.txt &&
+                    cd /app/docs &&
+                    make latexpdf &&
+                    make html
+                  "
+            - name: Upload documentation artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: documentation
+                  path: |
+                      docs/build/latex/*.pdf
+                      docs/build/html/
+            - name: Zip HTML documentation
+              run: |
+                  sudo chown -R $(id -u):$(id -g) docs/build
+                  cd docs/build
+                  zip -r html.zip html/*
+            - name: Release
+              uses: softprops/action-gh-release@v2
+              if: startsWith(github.ref, 'refs/tags/')
+              with:
+                  files: |
+                      docs/build/latex/*.pdf
+                      docs/build/html.zip
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+              with:
+                  publish_branch: gh-pages
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: docs/build/html/
+                  force_orphan: true

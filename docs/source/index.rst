@@ -6,6 +6,7 @@ Welcome to Sphinx Documentation Demo!
 
    getting-started
    development
+   documentation
    reference/index
 
 .. toctree::
