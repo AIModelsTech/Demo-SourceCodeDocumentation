@@ -48,6 +48,21 @@ Building the Documentation
 
    The generated documentation will be in the `_build/html` directory.
 
+3. **Build the PDF documentation:**
+
+   To build the PDF version of the documentation, run:
+
+   .. code-block:: bash
+
+      docker run -i -v $(pwd)/..:/app sphinxdoc/sphinx-latexpdf /bin/bash -c "
+        cd /app &&
+        python3 -m pip install -r requirements.txt &&
+        cd /app/docs &&
+        make latexpdf
+      "
+
+   The generated PDF will be in the `_build/latex` directory.
+
 Maintaining the Documentation
 -----------------------------
 
@@ -79,8 +94,11 @@ GitHub Actions Workflow
 -----------------------
 
 The project includes a GitHub Actions workflow that automatically builds and deploys the documentation to GitHub Pages.
+
+The page is accessible at: `demo-docs.aimodels.ca <http://demo-docs.aimodels.ca>`_
+
 The workflow is defined in the `.github/workflows/docs.yaml` file.
 
 To trigger the workflow manually, navigate to the "Actions" tab in the GitHub repository and select the "Build and Deploy Documentation" workflow.
 
-For more information on GitHub Actions, refer to the [GitHub Actions documentation](https://docs.github.com/en/actions).
+For more information on GitHub Actions, refer to the `GitHub Actions documentation <https://docs.github.com/en/actions>`_.
