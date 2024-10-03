@@ -27,7 +27,7 @@ Installation
    .. code-block:: bash
 
       cd src
-      python run.py
+      python3 run.py
 
 Usage
 -----
